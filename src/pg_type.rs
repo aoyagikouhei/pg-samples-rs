@@ -92,7 +92,7 @@ pub(crate) async fn execute(pg_client: &PgClient) -> anyhow::Result<()> {
         bigint_val: 5,
         real_val: 6.1,
         double_val: 7.1,
-        text_val: "予定表〜①ﾊﾝｶｸだ".to_string(),
+        text_val: "予定表～①💖ﾊﾝｶｸだ".to_string(),
         bytes_val: vec![240, 159, 146, 150],
         hstore_val: {
             let mut hstore_val = HashMap::new();
@@ -114,7 +114,7 @@ pub(crate) async fn execute(pg_client: &PgClient) -> anyhow::Result<()> {
         path_val: LineString(vec![Coord { x: 0., y: 0. }, Coord { x: 10., y: 20. }]),
         jsonb_val: {
             let json_data = r#"{
-                "name" : "予定表〜①ﾊﾝｶｸだ",
+                "name" : "予定表～①💖ﾊﾝｶｸだ",
                 "age" : 92233720368547758070
             }"#;
             serde_json::from_str(json_data).unwrap()
