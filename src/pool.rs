@@ -1,4 +1,3 @@
-
 use std::time::Duration;
 
 pub(crate) type PgClient = deadpool_postgres::Client;
