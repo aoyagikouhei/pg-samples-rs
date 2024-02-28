@@ -1,5 +1,5 @@
-DROP TYPE IF EXISTS type_resident_set_update_batch CASCADE;
-CREATE TYPE type_resident_set_update_batch AS (
+DROP TYPE IF EXISTS type_pg_set_update_batch CASCADE;
+CREATE TYPE type_pg_set_update_batch AS (
   batch_code TEXT
 );
 
@@ -9,10 +9,10 @@ CREATE TYPE type_resident_set_update_batch AS (
 --   p_now : 現在時刻
 -- 戻り値
 --   batch_code : バッチUUID
-CREATE OR REPLACE FUNCTION resident_set_update_batch(
+CREATE OR REPLACE FUNCTION pg_set_update_batch(
   p_batch_code TEXT DEFAULT NULL
   ,p_now TIMESTAMP DEFAULT NULL
-) RETURNS SETOF type_resident_set_update_batch AS $FUNCTION$
+) RETURNS SETOF type_pg_set_update_batch AS $FUNCTION$
 DECLARE
   w_now TIMESTAMP := COALESCE(p_now, NOW());
   w_batch RECORD;

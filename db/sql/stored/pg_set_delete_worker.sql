@@ -1,5 +1,5 @@
-DROP TYPE IF EXISTS type_resident_set_delete_worker CASCADE;
-CREATE TYPE type_resident_set_delete_worker AS (
+DROP TYPE IF EXISTS type_pg_set_delete_worker CASCADE;
+CREATE TYPE type_pg_set_delete_worker AS (
   data_json JSONB
 );
 
@@ -7,8 +7,8 @@ CREATE TYPE type_resident_set_delete_worker AS (
 -- 引数
 -- 戻り値
 --   data_json : データJSON
-CREATE OR REPLACE FUNCTION resident_set_delete_worker(
-) RETURNS SETOF type_resident_set_delete_worker AS $FUNCTION$
+CREATE OR REPLACE FUNCTION pg_set_delete_worker(
+) RETURNS SETOF type_pg_set_delete_worker AS $FUNCTION$
 DECLARE
   w_record RECORD;
   w_count BIGINT := 0;
