@@ -2,6 +2,7 @@ mod logs;
 mod pg_type;
 mod pool;
 mod composite;
+mod procedure;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
@@ -12,6 +13,7 @@ async fn main() -> anyhow::Result<()> {
     let pg_client = pg_pool.get().await?;
     pg_type::execute(&pg_client).await?;
     composite::execute(&pg_client).await?;
+    procedure::execute(&pg_client).await?;
 
     Ok(())
 }
